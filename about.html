@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chris Komaroff | Personal Website</title>
+    <link rel="stylesheet" href="css/normalize.css">
+<!--    
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/plain'>
+-->
+<!-- validator.w3.org does seem to accept pipe (|) anymore, so replace with %7C -->
+    <link href='http://fonts.googleapis.com/css?family=Changa+One%7COpen+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/plain'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<!-- Extra space here causing body tag to display a narrow bar at top? -->
+<!--
+<style>
+div {
+    font-size: 0;
+}
+</style>
+-->
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Chris Komaroff</h1>
+        <h2>Personal Website</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="about.html" class="selected">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+ <!-- <section> -->  <!-- My weird hack, read below. 3/18/17 -->
+      <section id="primary">  <!-- id='primary' here enables body tag to not be exposed in narrow bar at top for tablet/desktop?? -->
+        <img src="img/Self2_19Sept2014.jpg" alt="Photo of Chris Komaroff" class="profile-photo">
+        <h3>About</h3>
+        <p>Hello, I am Chris Komaroff, nice to meet you. I am a computer programmer by day using Symitar PowerOn
+ 'repgen' database programming, OpCon automation, Crystal Reports, and a few other odds and ends.</p>
+ <p>Lately I have been learning about web development. This site is a simple static site that uses no database. I am learning Django web design and soon will be having fun experimenting with the power of web framework programming - I will try to link to my test Django site(s) on this site.</p>
+<p>Also will put some more pictures up on the gallery. Go visit my facebook page on the link
+ in contacts.</p>
+<!--        <p>Follow me on Twitter is <a href="http://twitter.com/nickrp">@nickrp</a>.</p>-->
+      </section>
+      <footer>
+<!--        <a href="http://twitter.com/nickrp"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>-->
+        <a href="http://facebook.com/chris.komaroff"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <p>&copy; 2017 Chris Komaroff.</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+/************************************
+GENERAL
+*************************************/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+a {
+ text-decoration:none; 
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/************************************
+HEADING
+*************************************/
+
+/*
+  The HTML5 header element may be unlike normal HTML element? When I look
+  at the header element in web inspector (safari) or dev tool (chrome),
+  it appears the header is on top of the div element (drew boundaries to
+  see), yet you can pretend that is not the case. Anyway, the CSS for header
+  below is a bit of a hack? You can avoid using header's height attribute,
+  then given width 100%, float header left seems to force the div element
+  to the next line, then it is as if the div element allows the header
+  element's boundary to "expand" to include all the header elements contents
+  (my name, nav links), and header is then centered in a nice looking box
+  (do not confuse this with a clear/clearfix, it is a float left that
+  accomplishes this). Maybe this is a more liquid design to avoid using
+  height 100px? 9/23/17
+*/
+
+header {
+  float: left;
+  margin: 0 0 30px 0;
+  padding: 5px 0 0 0;
+  width: 100%;  /* No this is not default */
+}
+
+#logo {
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Changa One', sans-serif;
+  margin: 15px 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: 0.8em;
+}
+
+h2 {
+  font-size: 0.75em;
+  margin: -5px 0 0;
+  font-weight: normal;
+}
+
+
+/************************************
+NAVIGATION
+*************************************/
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 10px:
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  font-weight: 800;
+  padding: 15px 10px;
+}
+
+
+/************************************
+FOOTER
+*************************************/
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  clear: both;  /* Ensure footer cannot be floated? 9/23/17 */
+  padding-top: 50px;
+  color: black
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+
+/************************************
+PAGE: PORTFOLIO
+*************************************/
+
+#gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* margin math: 2.5 + 45 + 2.5 + 2.5 + 45 + 2.5 = 100% of gallery parent */
+/* NOTE: responsive.css overrides #gallery css WIDTH for screen sizes
+   larger than smart phone--PORTFOLIO IMAGES CONTINUE TO
+   GET FLOATED PER THIS FLOAT PROPERTY BELOW, BUT responsive.css CHANGES WIDTH
+   TO 28.3333% FOR TABLET AND DESKTOP (HENSE PHONE=2 COL LAYOUT, TABLET=DESKTOP=
+   3 COL LAYOUT)(2 OR 3 COLUMNS USED FOR PORTFOLIO IMAGE DISPLAY).
+   NOTE: the gallery command 45% here or 28.3333% in responsive.css effectively
+   scales the images (reduces them in size from actual pixel size 1024x768 or etc.)
+   i.e. REMEMBER PERCENTAGES ALLOW 'FLUID' LAYOUT (images shrink/grow with screen size).
+
+   See responsive.css for reminder of #gallery class definition - */
+
+#gallery li {
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  background-color: #f5f5f5;
+  color: black;
+}
+
+#gallery li a p {
+  margin: 0;
+  padding: 5%;
+  font-size: 0.75em;
+  color: black;
+}
+
+
+/************************************
+PAGE: ABOUT
+*************************************/
+
+.profile-photo {
+  display: block;
+  max-width: 150px;
+  margin: 0 auto 30px;
+  border-radius: 15%;
+}
+
+
+/************************************
+PAGE: CONTACT
+*************************************/
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+  color: black;
+}
+
+.contact-info li.phone a {
+  background-image: url('../img/phone.png');
+}
+
+.contact-info li.mail a {
+  background-image: url('../img/mail.png');
+}
+
+.contact-info li.twitter a {
+  background-image: url('../img/twitter.png');
+}
+
+
+/************************************
+COLORS
+*************************************/
+/* Warning, I put some navigator color css commands in
+responsive.css even thought I suspect designers probably
+don't like color changes based on screen size (?) 9/28/14 */
+
+/* site body */
+body {
+  background-color: black;
+}
+
+/* light blue (was green) header */
+header {
+  background: #1E90FF;
+}
+
+/* nav background on mobile */
+nav {
+  background: #87CEFA;
+}
+
+/* logo text */
+h1, h2 {
+  color: #fff;
+}
+
+/* links */
+a {
+ color: #39f;  
+}
+
+/* nav link */
+nav a, nav a:visited {
+  color: #fff;
+}
+
+/* selected nav link */
+nav a.selected, nav a:hover {
+  color: #39f;
+}
+
+

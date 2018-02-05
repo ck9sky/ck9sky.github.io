@@ -1,0 +1,158 @@
+/* 
+SMARTPHONE: this website is designed for small smartphone screen size by default
+(This is part of design technique - default design is for smallest screen size)
+*/
+		#wrapper {
+			background-color: #00BFFF;
+		}
+
+/* nav on smartphone floats in dark blue border 9/28/14 */
+nav a.selected {
+  color: black;
+}
+
+/* SCREEN: MOBILE (SMARTPHONE). Only one CSS command targeting mobile (smartphone) needed.
+   It seems the nth-child() command can only be performed once? I had to add a media
+   command for mobile (smartphone) which should be redundant (this is mobile first site),
+   but for some reason nth-child(2n+1), once performed, makes nth-chile(3n+1) get ignored
+   such that tablet and desktop are stuck with 2 images per row, not 3. 9/23/17
+*/
+
+@media screen and (max-width: 479px) {
+  /* See my notes. Need to clear
+  at end of each row so each row can work properly. 9/23/17 */
+  #gallery li:nth-child(2n+1) {
+    clear: left;
+  }
+}
+
+/* SCREEN: TABLET (aka. narrow / but not smartphone resolution) >= 480px
+   PLEASE UNDERSTAND THE DESKTOP >= 680 ADOPTS THE CSS CODE IN BOTH THE "TABLET"
+   AND "DESKTOP" SECTION PER CSS RULES OF PRECEDENCE ETC. */
+
+@media screen and (min-width: 480px) {
+  
+  /************************************
+  PAGE: CONTACT - TWO COLUMN LAYOUT
+  *************************************/
+
+  #primary {
+    width: 50%;
+    float: left;
+  }
+  
+  #secondary {
+    width: 40%;
+    float: right;    
+  }
+ 
+  /************************************
+  PAGE: PORTFOLIO (3 COLUMNS)
+  *************************************/
+
+  /************************************
+  Margin math
+  2.5% * 6 = 15% (tablet/desktop margin total, 3 images per row)
+  100% - 15% = 85%
+  85 / 3 = 28.33333333333%
+  NOTE: Since desktop media commands below do not override this #gallery
+  css, then desktop also follows this 28.3333% command below.
+  *************************************/
+  
+  #gallery li {
+    width: 28.3333%
+  }
+  
+  /* Pseudo-class selector. Let n=0,1,2,3,... The images (elements) in the
+  list are in fact ordered 1st, 2nd, 3rd, ... (there is no "zero-th" element).
+  However, (4n) is not the correct formula. We want to select the "1st"
+  (leftmost) image in each row, so we need to use formula (3n+1) which will
+  select the leftmost images 1st, 4th, 7th, 10th (if there are more than
+  5 images in the list). PURPOSE: make rows of 3 images align such that
+  a row has all the top of all 3 images in the same line. The clear forces
+  the parent #gallery to "clear" the 3 images of the previous row which
+  forces next row to start outside #gallery bottom boundary in another
+  straight line (recall float of element collapses parent container until
+  you "clear"). */
+
+  
+  #gallery li:nth-child(3n+1) {
+    clear: left;
+  }
+
+		#wrapper {
+			background-color: #00BFFF;
+		}  
+  
+  /************************************
+  PAGE: ABOUT
+  *************************************/
+  
+  .profile-photo {
+    float: left;
+    margin: 0 5% 80px 0;
+  }
+
+  /* nav on tablet also floats in dark blue border 9/28/14 */
+  nav a.selected {
+    color: black;
+  }  
+}
+
+/* SCREEN: DESKTOP (aka. wide resolution) >= 680px
+   REMEMBER THE CSS RULES ABOVE ALSO APPLY TO DESKTOP IF NOT OVERRULES PER
+   CSS CODE IN THIS MEDIA COMMAND. */
+
+@media screen and (min-width: 660px){
+
+
+		#wrapper {
+			background-color: #00BFFF;
+		}
+
+  /************************************
+  PAGE: ABOUT, HEADER
+  *************************************/  
+  
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-right 5%
+    text-align: right;
+    width: 45%;
+  }
+  
+  #logo {
+    float:left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+  
+  header {
+    border-bottom: 5px solid black;
+  }
+  
+  /* nav on desktop does not float blue border 9/28/14 */
+  nav a.selected {
+    color: black;
+  }
+  /* Seem to need to put desktop nav hover color here */
+  nav a:hover {
+    color: #03c;
+  }
+
+
+}
+
+
